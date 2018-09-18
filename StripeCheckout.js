@@ -198,6 +198,10 @@ export default class ReactStripeCheckout extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
+
+    // Overwrite and set script loaded as extension will have already executed stripe checkout js
+    scriptLoaded = true;
+
     if (scriptLoaded) {
       return this.updateStripeHandler();
     }
